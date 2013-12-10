@@ -27,10 +27,14 @@ togglr.js
 
 **Notes:**
 
-  In the comments below, these are the terms/class names we will use
+  In the comments below, these are the terms/class names we will use:
 
   togglr = parent element that we initialize the plugin on
+
   ttoggle = Show All/Hide All element - in HTML these are two DIVs each with the same class
+
   ttitle = FAQ quesion
+
   tcontent = FAQ answer
+  
   stateList = array of questions that are open (mirrored in the cookie called "stateListCookie")
