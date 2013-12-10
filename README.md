@@ -36,5 +36,7 @@ togglr.js
   ttitle = FAQ quesion
 
   tcontent = FAQ answer
-  
+
   stateList = array of questions that are open (mirrored in the cookie called "stateListCookie")
+
+**Demo:** http://z00.co/togglr.js/example.html
