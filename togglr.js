@@ -52,6 +52,7 @@
     		//if current tcontent element is found in the stateList array, expand it
         if (jQuery.inArray("tc" + index, stateList ) != -1) {
     		   $(this).show();
+           $(this).prev(".ttitle").addClass("topen");
     		}
     	});
 
@@ -65,7 +66,7 @@
           //hide all tcontent elements
     			$(".tcontent").hide();
           //remove class topen from all tcontent elements
-          $(".tcontent").removeClass("topen");
+          $(".tcontent").prev(".ttitle").removeClass("topen");
           //remove class texpanded from togglr element
     			$(".togglr").removeClass("texpanded");
           //change Show All to Hide All
@@ -81,7 +82,7 @@
           //show all tcontent elements
     			$(".tcontent").show();
           // add class topen to all tcontent elements
-          $(".tcontent").addClass("topen");
+          $(".tcontent").prev(".ttitle").addClass("topen");
           //add class texpanded to togglr element
     			$(".togglr").addClass("texpanded");
           //change Hide All to Show All
@@ -102,7 +103,7 @@
           //display it
     			$(this).next(".tcontent").show();
           //add class topen to ttitle element (note: no class gets added to the tcontent element)
-          $(this).addClass(".topen");
+          $(this).addClass("topen");
           //add this tcontent element to the stateList array (since it now became visible/expanded)
     			stateList.push("tc" + $(this).next(".tcontent").attr("class").split("tc").pop());
           //update the cookie with the current state of stateList - this array gets turned into a string with "," being the delimiter
@@ -113,7 +114,7 @@
           //hide it
     			$(this).next(".tcontent").hide();
           //remove class topen from title element (note: no class gets removed from the tcontent element)
-          $(this).removeClass(".topen");
+          $(this).removeClass("topen");
           //remove this tcontent element from the stateList array (since it now became hidden/collapsed)
     			stateList.splice( $.inArray("tc" + $(this).next(".tcontent").attr("class").split("tc").pop(), stateList),  1);
           //update the cookie with the current state of stateList
@@ -123,12 +124,7 @@
 
     });
  
-  };
- 
-}( jQuery ));
-
-
-/* 
+  /* 
 
   Cookie functionality - copied from ttp://www.w3schools.com/js/js_cookies.asp
   
@@ -184,3 +180,7 @@ if (stateListCookie!=null && stateListCookie!="")
     return stateList;
   }
 }
+
+  };
+ 
+}( jQuery ));

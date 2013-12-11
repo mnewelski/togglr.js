@@ -39,4 +39,4 @@ togglr.js
 
   stateList = array of questions that are open (mirrored in the cookie called "stateListCookie")
 
-**Demo:** http://z00.co/togglr.js/example.html
+**Demo:** http://z00.co/togglr.js/demo

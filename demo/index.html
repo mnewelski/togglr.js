@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>togglr.js</title>
+<link rel="stylesheet" type="text/css" href="tstyle.css">
+<script src="jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<h1>togglr.js - show/hide FAQ questions with persisting collapse/expand states stored in a cookie</h1>
+<br>
+<div id="faqContainer">
+
+	<div class="ttoggle">Show All</div>
+	<div class="ttoggle" style="display: none;">Hide All</div>
+
+	<div class="ttitle">What does this plugin do?</div>
+	<div class="tcontent">It adds collapse/expand functionality!</div>
+
+	<div class="ttitle">Anything else?</div>
+	<div class="tcontent">Yes, it stores the state in a cookie!</div>
+
+	<div class="ttitle">Can I customize my own CSS?</div>
+	<div class="tcontent">Of course! This is just an example :-)</div>
+
+	<div class="ttitle">Where can I download it?</div>
+	<div class="tcontent">Click on the big green button below!</div>
+
+</div>
+<br><br>
+<a class="downloadLink" href="http://z00.co/togglr.js/togglr.js-current.zip" style="font-family: Arial; font-size: 20px;">Download togglr.js (zip)</a>
+<script src="../togglr.js"></script>
+<script>$("#faqContainer").togglrMe();</script>
+
+</body>
+</html>
