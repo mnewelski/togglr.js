@@ -2,8 +2,8 @@ body {text-align: center;}
 h1 {font-family: Arial, sans-serif; font-size: 18px; color: #454545; font-weight: bold;}
 .togglr {width: 500px; margin: 20px auto; text-align: left;}
 .ttoggle {font-family: Arial; border-radius: 10px; font-size: 18px; border: 1px #454545 solid; margin-bottom: 20px; padding: 3px 10px; width: 20%; text-align: center;}
-.ttitle {font-family: Arial; border-radius: 10px; font-size: 18px; border: 1px #52D200 solid; margin-top: 10px; padding: 10px;
-		background-image: url('ad.png'); background-repeat: no-repeat; background-position: right center;}
+.ttitle, .ttitle.topen {font-family: Arial; border-radius: 10px; font-size: 18px; border: 1px #52D200 solid; margin-top: 10px; padding: 10px; background-repeat: no-repeat; background-position: right center;}
+.ttitle {background-image: url('ad.png');}
 .ttitle.topen {background-image: url('au.png');}
 .tcontent {font-family: Arial; border-radius: 10px; font-size: 16px; border: 1px #E8E8E8 solid; margin-bottom: 10px; padding: 10px; background: #F2F2F2;}
 .downloadLink {background: #53C953; border: 2px #38B238 solid; font-family: Arial, sans-serif; color: #000000; text-decoration: none; padding: 15px;}
