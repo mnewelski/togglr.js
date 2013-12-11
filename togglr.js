@@ -34,13 +34,15 @@
 
 */
 (function( $ ) {
- 
+  
+      var stateList = [];
+    
     $.fn.togglrMe = function() {
       return this.each(function() {
       //add class togglr to your parent element - needed for functionality
       $(this).addClass('togglr');
       //stateList contains classes of opened tcontents in the format tc1, tc2, etc.
-      var stateList = checkCookie();
+      stateList = checkCookie();
       //all questions are open in the cookie - change from default Show All to Hide All
       if ($(".tcontent").size() == stateList.length) {$(".ttoggle").toggle(); $(".togglr").addClass("texpanded");}
       //hide all tcontent elements by default - this removes the necessity of adding display: none; to tcontent in CSS
@@ -72,7 +74,7 @@
           //change Show All to Hide All
     			$(".ttoggle").toggle();
           //clear the stateListCookie - no tcontent elements should be visible
-          setCookie("stateListCookie", '', 365);
+          //setCookie("stateListCookie", '', 365);
     		}
         //all questions are collapsed (since togglr has no class texpanded)
     		else
@@ -93,7 +95,7 @@
   		  		  stateList.push("tc" + index);
   		  	});
           //update the stateListCookie - all tcontent elements should be visible - this array gets turned into a string with "," being the delimiter
-    			setCookie("stateListCookie", stateList.join(','), 365);
+    			//setCookie("stateListCookie", stateList.join(','), 365);
     		}
     	});
       //user clicks on the ttitle (i.e. question)
@@ -107,7 +109,7 @@
           //add this tcontent element to the stateList array (since it now became visible/expanded)
     			stateList.push("tc" + $(this).next(".tcontent").attr("class").split("tc").pop());
           //update the cookie with the current state of stateList - this array gets turned into a string with "," being the delimiter
-          setCookie("stateListCookie", stateList.join(','), 365);
+          //setCookie("stateListCookie", stateList.join(','), 365);
     		}
         //else, the next tcontent (i.e. answer) element is visible/expanded
     		else {
@@ -118,12 +120,17 @@
           //remove this tcontent element from the stateList array (since it now became hidden/collapsed)
     			stateList.splice( $.inArray("tc" + $(this).next(".tcontent").attr("class").split("tc").pop(), stateList),  1);
           //update the cookie with the current state of stateList
-    			setCookie("stateListCookie", stateList.join(','), 365);
+    			//setCookie("stateListCookie", stateList.join(','), 365);
     		}
     	});
 
+      window.onbeforeunload = function (){
+        setCookie("stateListCookie", stateList.join(','), 365);
+      }
     });
- 
+
+
+
   /* 
 
   Cookie functionality - copied from ttp://www.w3schools.com/js/js_cookies.asp
@@ -168,7 +175,6 @@ document.cookie=c_name + "=" + c_value;
 function checkCookie()
 {
 var stateListCookie = getCookie("stateListCookie");
-var stateList = new Array();
 if (stateListCookie!=null && stateListCookie!="")
   {
 
@@ -180,6 +186,9 @@ if (stateListCookie!=null && stateListCookie!="")
     return stateList;
   }
 }
+
+
+
 
   };
  

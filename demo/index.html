@@ -1,34 +1,37 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>togglr.js</title>
+<title>togglr.js demo</title>
 <link rel="stylesheet" type="text/css" href="tstyle.css">
 <script src="jquery-1.10.2.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<h1>togglr.js - show/hide FAQ questions with persisting collapse/expand states stored in a cookie</h1>
-<br>
+<!-- togglr container -->
 <div id="faqContainer">
 
 	<div class="ttoggle">Show All</div>
 	<div class="ttoggle" style="display: none;">Hide All</div>
 
 	<div class="ttitle">What does this plugin do?</div>
-	<div class="tcontent">It adds collapse/expand functionality!</div>
+	<div class="tcontent">It adds faq list (collapse/expand) functionality + stores current collapsed/expanded states in a cookie</div>
 
-	<div class="ttitle">Anything else?</div>
-	<div class="tcontent">Yes, it stores the state in a cookie!</div>
+	<div class="ttitle">How do I start using it?</div>
+	<div class="tcontent">Download the .zip below, view this example (in folder "demo") and read the comments in togglr.js.</div>
 
-	<div class="ttitle">Can I customize my own CSS?</div>
-	<div class="tcontent">Of course! This is just an example :-)</div>
+	<div class="ttitle">Can I customize the CSS?</div>
+	<div class="tcontent">Yes, you can apply any CSS styles to each element.</div>
 
-	<div class="ttitle">Where can I download it?</div>
-	<div class="tcontent">Click on the big green button below!</div>
+	<div class="ttitle">Which browsers are supported?</div>
+	<div class="tcontent">IE8+, Chrome, Firefox, Opera, Safari + Mobile Browsers</div>
 
 </div>
+<!-- end togglr container -->
 <br><br>
-<a class="downloadLink" href="http://z00.co/togglr.js/togglr.js-current.zip" style="font-family: Arial; font-size: 20px;">Download togglr.js (zip)</a>
+<a class="downloadLink" href="http://z00.co/togglr.js/togglr.js-current.zip" style="font-family: Arial; font-size: 20px;">Download togglr.js (zip)</a><br><br><br>
+<a href="https://github.com/mnewelski/togglr.js" style="text-decoration: none; color: #4183c4;" target="_blank">View on GitHub</a>
+
 <script src="../togglr.js"></script>
 <script>$("#faqContainer").togglrMe();</script>
-
 </body>
 </html>
